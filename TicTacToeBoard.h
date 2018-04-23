@@ -29,7 +29,7 @@ class TicTacToeBoard
      * Switches turn member variable to represent whether it's X's or O's turn
      * and returns whose turn it is
     **/
-    Piece toggleTurn();
+    Piece toggleTurn(); //DONE
 
   	/**
      * Places the piece of the current turn on the board, returns what
@@ -53,6 +53,9 @@ class TicTacToeBoard
   	 * is not over, or Blank if the board is filled and no one has won.
   	**/
   	Piece getWinner();
+  	
+  	Piece getTurn();
+  	void fillBoardCatsGame();
 };
 
 #endif
