@@ -41,10 +41,25 @@ TEST(TicTacToeBoardTest, placePieceOnBlank)
 	ASSERT_EQ(myBoard.getPiece(0, 0), X);
 }
 
-TEST(TicTacToeBoardTest, placePieceOutsideBoard)
+TEST(TicTacToeBoardTest, placePieceYTooBig)
 {
 	TicTacToeBoard myBoard;
 	ASSERT_EQ(myBoard.placePiece(0, 4), Invalid);
+}
+TEST(TicTacToeBoardTest, placePieceYTooSmall)
+{
+	TicTacToeBoard myBoard;
+	ASSERT_EQ(myBoard.placePiece(0, -1), Invalid);
+}
+TEST(TicTacToeBoardTest, placePieceXTooBig)
+{
+	TicTacToeBoard myBoard;
+	ASSERT_EQ(myBoard.placePiece(4, 0), Invalid);
+}
+TEST(TicTacToeBoardTest, placePieceXTooSmall)
+{
+	TicTacToeBoard myBoard;
+	ASSERT_EQ(myBoard.placePiece(-1, 1), Invalid);
 }
 
 TEST(TicTacToeBoardTest, placePieceOnTakenSpot)
@@ -139,4 +154,16 @@ TEST(TicTacToeBoardTest, getWinnerCatsGame)
 	// myBoard.placePiece(2,2);
 	// myBoard.placePiece(2,1);
 	ASSERT_EQ(myBoard.getWinner(), Blank);
+}
+
+TEST(TicTacToeBoardTest, TestRandomSpots )
+{
+	TicTacToeBoard myBoard;
+	myBoard.placePiece(0,1);
+	myBoard.placePiece(0,0);
+	myBoard.placePiece(0,2);
+	myBoard.placePiece(1,1);
+	myBoard.placePiece(1,2);
+	ASSERT_EQ(myBoard.getWinner(), Invalid);
+	
 }
