@@ -1,7 +1,7 @@
 # Building GoogleTest and running exercise-gtest unit tests against
 # all code in SOURCECODE subdirectory. This Makefile is based on the
 # sample Makefile provided in the official GoogleTest GitHub Repo v1.7
-
+# Removed this for TravisCI
 # GTEST_DIR = /usr/local/src/googletest/googletest
 
 # Flags passed to the preprocessor and compiler
